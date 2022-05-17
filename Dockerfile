@@ -1,16 +1,15 @@
-FROM python:3.7.13
+FROM python:2.7.14-jessie
 
 WORKDIR /apps/
 
-COPY bad/ /apps/
-COPY requirements.txt /apps/
+COPY app/ /apps/
 
 WORKDIR /apps/
 
-RUN pip install -r /apps/requirements.txt
+RUN pip install -U pip setuptools && pip install -r /apps/requirements.txt
 
-EXPOSE 5000
+EXPOSE 5050
 
 ENTRYPOINT ["python"]
 
-CMD ["vulpy.py"]
+CMD ["app.py"]
