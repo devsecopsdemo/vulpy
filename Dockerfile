@@ -3,6 +3,7 @@ FROM python:3.7
 WORKDIR /apps/
 
 COPY bad/ /apps/
+COPY requirements.txt /apps/
 
 WORKDIR /apps/
 
